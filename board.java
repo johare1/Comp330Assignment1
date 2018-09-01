@@ -9,13 +9,13 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.geometry.Rectangle2D;
-import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
-import javafx.scene.shape.ArcType;
 import javafx.scene.Scene;
 import javafx.scene.Group;
+import javafx.scene.layout.HBox;
+import javafx.scene.shape.ArcType;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
 
@@ -23,16 +23,17 @@ import java.util.Scanner;
 
 public class board extends Application
 {
+  public static void main(String[] args)
+  {
+      launch(args);
+  }
+
   @Override public void start(Stage stage)
   {
-    Image image = new Image("file:boardImage.jpg");
-
-    //adds a Canvas
-    Canvas canvas = new Canvas(400, 300);
-
-    //calls getGraphicsContext2D
+    Canvas canvas = new Canvas(400, 300); //adds a Canvas (the window itself), graphics are put in it
     GraphicsContext gc = canvas.getGraphicsContext2D();
 
+    Image image = new Image("file:boardImage.jpg");
     ImageView imageView1 = new ImageView();
     imageView1.setImage(image);
     imageView1.setFitWidth(1000);
@@ -41,13 +42,15 @@ public class board extends Application
     imageView1.setSmooth(true);
     imageView1.setCache(true);
 
-    Group root = new Group();
-    Scene scene = new Scene(root);
-    scene.setFill(Color.BLACK);
-    HBox box = new HBox();
+    HBox box = new HBox(); //helps manage sizing image
     box.getChildren().add(imageView1);
+
+    Group root = new Group(); //holds observable children (what can be in a group)
     root.getChildren().add(box);
     root.getChildren().add(canvas);
+
+    Scene scene = new Scene(root); //like the backgound of the canvas
+    scene.setFill(Color.WHITE);
 
     stage.setTitle("Tic Tac Toe");
     stage.setWidth(415);
@@ -56,8 +59,9 @@ public class board extends Application
     stage.sizeToScene();
     stage.show();
 
+
     //test making points
-    Scanner keyboard = new Scanner (System.in);
+    /*Scanner keyboard = new Scanner (System.in);
 
     System.out.println("Enter a number");
     int input = keyboard.nextInt();
@@ -70,16 +74,9 @@ public class board extends Application
         root.getChildren().add(node0);
       }
     System.out.println("After first point");
+    */
 
   }
-
-  public static void main(String[] args)
-  {
-      launch(args);
-  }
-
-
-
 
 
 }
