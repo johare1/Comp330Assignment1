@@ -19,7 +19,7 @@ import javafx.scene.shape.ArcType;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class board extends Application
 {
@@ -36,8 +36,8 @@ public class board extends Application
     Image image = new Image("file:boardImage.jpg");
     ImageView imageView1 = new ImageView();
     imageView1.setImage(image);
-    imageView1.setFitWidth(1000);
-    imageView1.setFitHeight(1000);
+    imageView1.setFitWidth(500);
+    imageView1.setFitHeight(500);
     imageView1.setPreserveRatio(true);
     imageView1.setSmooth(true);
     imageView1.setCache(true);
@@ -53,14 +53,14 @@ public class board extends Application
     scene.setFill(Color.WHITE);
 
     stage.setTitle("Tic Tac Toe");
-    stage.setWidth(415);
+    stage.setWidth(415); //affects where the window will appear on screen
     stage.setHeight(200);
     stage.setScene(scene);
     stage.sizeToScene();
     stage.show();
 
 
-    //test making points
+    //test making points, coordinates would be affected rfom resizing
     /*Scanner keyboard = new Scanner (System.in);
 
     System.out.println("Enter a number");
