@@ -67,7 +67,7 @@ public class board extends Application
     node0.setRadius(5);
     root.getChildren().add(node0);
     */
-
+    Scanner keyboard = new Scanner (System.in);
     /*TODO set user input to these strings*/
     String p1Name = "";
     String p2Name = "";
@@ -89,6 +89,7 @@ public class board extends Application
     Section s6 = new Section(6,"",false);
     Section s7 = new Section(7,"",false);
     Section s8 = new Section(8,"",false);
+    int selSection;
 
     List<Section> sectionList = new ArrayList<Section>();
 
@@ -103,8 +104,10 @@ public class board extends Application
     sectionList.add(s8);
 
 
+    System.out.println("Player 1: please select your move");
+    selSection = keyboard.nextInt();
 
-
+    
 
   }
 
