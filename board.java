@@ -107,7 +107,7 @@ public class board extends Application
     System.out.println("Player 1: please select your move");
     selSection = keyboard.nextInt();
 
-    
+
 
   }
 
