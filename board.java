@@ -59,15 +59,17 @@ public class board extends Application
     stage.sizeToScene();
     stage.show();
 
-    //numbers on the board
-    /*node0.setCenterX(453);
+    /*
+    Circle node0 = new Circle();
+    node0.setCenterX(453);
     node0.setCenterY(178);
     node0.setRadius(5);
     root.getChildren().add(node0);
     */
 
+
     gamePlay play = new gamePlay();
-    play.display();
+    play.startDisplay();
 
 
 
