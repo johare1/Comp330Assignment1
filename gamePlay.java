@@ -50,6 +50,18 @@ public class gamePlay
     else
       System.out.println("That is not one of the player's names");
 
+  }
+
+  public void play()
+  {
+    /*
+    use an ArrayList
+    have users pick a number from 0-8 becase each number is a box on the board
+    example: if player 1 chooses 0, their symbol will be on box 0
+      and their symbol will be stored in index 0 and it prevents the other player
+      from picking the same number
+
+    */
 
 
 
