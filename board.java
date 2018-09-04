@@ -1,8 +1,8 @@
 /*
 The board for tic tac toe
 
-Coded by Janeen Soria
-Last modified September 3, 2018
+Board coded by Janeen Soria
+Last modified September 4, 2018
 */
 
 import javafx.application.Application;
@@ -60,13 +60,70 @@ public class board extends Application
     stage.sizeToScene();
     stage.show();
 
-    /*
-    Circle node0 = new Circle();
-    node0.setCenterX(453);
-    node0.setCenterY(178);
-    node0.setRadius(5);
-    root.getChildren().add(node0);
-    */
+    //location of where the points will be
+    Circle box0 = new Circle();
+    box0.opacityProperty().set(0.5);
+    box0.setCenterX(73); //lower number makes it appear more to the left
+    box0.setCenterY(87); //lower number makes it appear higher
+    box0.setRadius(20);
+    root.getChildren().add(box0);
+
+    Circle box1 = new Circle();
+    box1.opacityProperty().set(0.5);
+    box1.setCenterX(250);
+    box1.setCenterY(87);
+    box1.setRadius(20);
+    root.getChildren().add(box1);
+
+    Circle box2 = new Circle();
+    box2.opacityProperty().set(0.5);
+    box2.setCenterX(417);
+    box2.setCenterY(87);
+    box2.setRadius(20);
+    root.getChildren().add(box2);
+
+    Circle box3 = new Circle();
+    box3.opacityProperty().set(0.5);
+    box3.setCenterX(73);
+    box3.setCenterY(250);
+    box3.setRadius(20);
+    root.getChildren().add(box3);
+
+    Circle box4 = new Circle();
+    box4.opacityProperty().set(0.5);
+    box4.setCenterX(250);
+    box4.setCenterY(250);
+    box4.setRadius(20);
+    root.getChildren().add(box4);
+
+    Circle box5 = new Circle();
+    box5.opacityProperty().set(0.5);
+    box5.setCenterX(417);
+    box5.setCenterY(250);
+    box5.setRadius(20);
+    root.getChildren().add(box5);
+
+    Circle box6 = new Circle();
+    box6.opacityProperty().set(0.5);
+    box6.setCenterX(417);
+    box6.setCenterY(420);
+    box6.setRadius(20);
+    root.getChildren().add(box6);
+
+    Circle box7 = new Circle();
+    box7.opacityProperty().set(0.5);
+    box7.setCenterX(250);
+    box7.setCenterY(420);
+    box7.setRadius(20);
+    root.getChildren().add(box7);
+
+    Circle box8 = new Circle();
+    box8.opacityProperty().set(0.5);
+    box8.setCenterX(73);
+    box8.setCenterY(420);
+    box8.setRadius(20);
+    root.getChildren().add(box8);
+
 
     /*TODO set user input to these strings*/
     String p1Name = "";
