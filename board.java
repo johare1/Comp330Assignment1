@@ -2,7 +2,7 @@
 The board for tic tac toe
 
 Coded by Janeen Soria
-Last modified September 1, 2018
+Last modified September 3, 2018
 */
 
 import javafx.application.Application;
@@ -30,10 +30,10 @@ public class board extends Application
 
   @Override public void start(Stage stage)
   {
-    Canvas canvas = new Canvas(400, 300); //adds a Canvas (the window itself), graphics are put in it
+    Canvas canvas = new Canvas(500, 500); //adds a Canvas (the window itself), graphics are put in it
     GraphicsContext gc = canvas.getGraphicsContext2D();
 
-    Image image = new Image("file:boardImage.jpg");
+    Image image = new Image("file:numberedBoard.png");
     ImageView imageView1 = new ImageView();
     imageView1.setImage(image);
     imageView1.setFitWidth(500);
@@ -59,22 +59,18 @@ public class board extends Application
     stage.sizeToScene();
     stage.show();
 
-
-    //test making points, coordinates would be affected rfom resizing
-    /*Scanner keyboard = new Scanner (System.in);
-
-    System.out.println("Enter a number");
-    int input = keyboard.nextInt();
-      if (input == 1)
-      {
-        Circle node0 = new Circle(); //would have 9 shapes maximum
-        node0.setCenterX(453);
-        node0.setCenterY(178);
-        node0.setRadius(5);
-        root.getChildren().add(node0);
-      }
-    System.out.println("After first point");
+    //numbers on the board
+    /*node0.setCenterX(453);
+    node0.setCenterY(178);
+    node0.setRadius(5);
+    root.getChildren().add(node0);
     */
+
+    gamePlay play = new gamePlay();
+    play.display();
+
+
+
 
   }
 
