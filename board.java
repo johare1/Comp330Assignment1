@@ -77,7 +77,7 @@ public class board extends Application
 
 
     /*initialize players and sections of board*/
-    Player p1 = new Player(false ,"X", p1Name);
+    Player p1 = new Player(true ,"X", p1Name);
     Player p2 = new Player(false ,"O", p2Name);
 
     Section s0 = new Section(0,"",false);
@@ -103,7 +103,7 @@ public class board extends Application
     sectionList.add(s8);
 
 
-    
+
 
 
   }
