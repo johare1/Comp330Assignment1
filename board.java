@@ -103,10 +103,19 @@ public class board extends Application
     sectionList.add(s7);
     sectionList.add(s8);
 
-
+   //TODO set loop to put the following game mechanics in 
     System.out.println("Player 1: please select your move");
     selSection = keyboard.nextInt();
 
+    if(sectionList.get(selSection).isTaken == false){
+      sectionList.get(selSection).value = p1.symbol;
+      sectionList.get(selSection).isTaken = true;
+      //TODO run method here to set board position
+    }
+    else
+    {
+      System.out.println("This space has already been taken. Choose another");
+    }
 
 
   }
