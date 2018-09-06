@@ -20,10 +20,6 @@ public class board
     /*DONE set user input to these strings*/
 
 
-    //gamePlay play = new gamePlay();
-    //play.startDisplay();
-
-
     /*initialize players and sections of board*/
     Player p1 = new Player(true, "X", p1Name);
     Player p2 = new Player(false, "O", p2Name);
@@ -37,8 +33,8 @@ public class board
     Section s6 = new Section(6, "6", false);
     Section s7 = new Section(7, "7", false);
     Section s8 = new Section(8, "8", false);
-    int selSection;
-
+    int selSection1;
+    int selSection2;
     List<Section> sectionList = new ArrayList<Section>();
 
     sectionList.add(s0);
@@ -55,11 +51,11 @@ public class board
       printBox(sectionList);
       //TODO set loop to put the following game mechanics in
       System.out.println(p1.name + ": please select your move");
-      selSection = keyboard.nextInt();
+      selSection1 = keyboard.nextInt();
 
-      if (sectionList.get(selSection).isTaken == false) {
-        sectionList.get(selSection).value = p1.symbol;
-        sectionList.get(selSection).isTaken = true;
+      if (sectionList.get(selSection1).isTaken == false) {
+        sectionList.get(selSection1).value = p1.symbol;
+        sectionList.get(selSection1).isTaken = true;
         //TODO run method here to set board position
         printBox(sectionList);
       } else {
@@ -67,11 +63,11 @@ public class board
       }
 
       System.out.println(p2.name + ": please select your move");
-      selSection = keyboard.nextInt();
+      selSection2 = keyboard.nextInt();
 
-      if (sectionList.get(selSection).isTaken == false) {
-        sectionList.get(selSection).value = p2.symbol;
-        sectionList.get(selSection).isTaken = true;
+      if (sectionList.get(selSection2).isTaken == false) {
+        sectionList.get(selSection2).value = p2.symbol;
+        sectionList.get(selSection2).isTaken = true;
         //TODO run method here to set board position
         printBox(sectionList);
       } else {
@@ -83,7 +79,6 @@ public class board
 
   public static void printBox(List<Section> secList)
   {
-    String[] box = {"0", "1", "2", "3", "4", "5", "6", "7", "8"};
 
     System.out.println(  "\n\n\t\t" + secList.get(0).value + "   | " + secList.get(1).value + "  | " + secList.get(2).value);
     System.out.println(  " \t\t    |    |   " );
