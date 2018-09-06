@@ -3,43 +3,40 @@ import java.util.Scanner;
 
 public class board
 {
-  public static void main(String[] args)
-  {
-    String[] box = {"0", "1", "2", "3", "4", "5", "6", "7", "8"};
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
 
-    System.out.println(  "\n\n\t\t" + box[0] + "   | " + box[1] + "  | " + box[2]);
-    System.out.println(  " \t\t    |    |   " );
-    System.out.println(  " \t\t ___|____|___ " );
-    System.out.println(  "\n\n\t\t" + box[3] + "   | " + box[4] + "  | " + box[5]);
-    System.out.println(  " \t\t    |    |   " );
-    System.out.println(  " \t\t ___|____|___ " );
-    System.out.println(  "\n\n\t\t" + box[6]+ "   | " +box[7] + "  | " + box[8]);
-    System.out.println(  " \t\t    |    |   " );
-    System.out.println(  " \t\t    |    |   " );
-
-
-    Scanner keyboard = new Scanner (System.in);
-    /*TODO set user input to these strings*/
     String p1Name = "";
     String p2Name = "";
+    boolean isGameActive = false;
+
+    System.out.println("Welcome to Tic Tac Toe. There will be two players in this game. Enter Player 1's name:");
+    p1Name = keyboard.nextLine().toUpperCase();
+    System.out.println("Enter Player 2's name:");
+    p2Name = keyboard.nextLine().toUpperCase();
+    isGameActive = true;
+
+
+    /*DONE set user input to these strings*/
+
 
     //gamePlay play = new gamePlay();
     //play.startDisplay();
 
 
     /*initialize players and sections of board*/
-    Player p1 = new Player(true ,"X", p1Name);
-    Player p2 = new Player(false ,"O", p2Name);
+    Player p1 = new Player(true, "X", p1Name);
+    Player p2 = new Player(false, "O", p2Name);
 
-    Section s0 = new Section(0,"",false);
-    Section s1 = new Section(1,"",false);
-    Section s2 = new Section(2,"",false);
-    Section s3 = new Section(3,"",false);
-    Section s4 = new Section(4,"",false);
-    Section s5 = new Section(5,"",false);
-    Section s6 = new Section(6,"",false);
-    Section s7 = new Section(7,"",false);
-    Section s8 = new Section(8,"",false);
+    Section s0 = new Section(0, "0", false);
+    Section s1 = new Section(1, "1", false);
+    Section s2 = new Section(2, "2", false);
+    Section s3 = new Section(3, "3", false);
+    Section s4 = new Section(4, "4", false);
+    Section s5 = new Section(5, "5", false);
+    Section s6 = new Section(6, "6", false);
+    Section s7 = new Section(7, "7", false);
+    Section s8 = new Section(8, "8", false);
     int selSection;
 
     List<Section> sectionList = new ArrayList<Section>();
@@ -54,18 +51,49 @@ public class board
     sectionList.add(s7);
     sectionList.add(s8);
 
-    //TODO set loop to put the following game mechanics in
-    System.out.println("Player 1: please select your move");
-    selSection = keyboard.nextInt();
+    while (isGameActive == true) {
+      printBox(sectionList);
+      //TODO set loop to put the following game mechanics in
+      System.out.println(p1.name + ": please select your move");
+      selSection = keyboard.nextInt();
 
-    if(sectionList.get(selSection).isTaken == false){
-      sectionList.get(selSection).value = p1.symbol;
-      sectionList.get(selSection).isTaken = true;
-      //TODO run method here to set board position
+      if (sectionList.get(selSection).isTaken == false) {
+        sectionList.get(selSection).value = p1.symbol;
+        sectionList.get(selSection).isTaken = true;
+        //TODO run method here to set board position
+        printBox(sectionList);
+      } else {
+        System.out.println("This space has already been taken. Choose another");
+      }
+
+      System.out.println(p2.name + ": please select your move");
+      selSection = keyboard.nextInt();
+
+      if (sectionList.get(selSection).isTaken == false) {
+        sectionList.get(selSection).value = p2.symbol;
+        sectionList.get(selSection).isTaken = true;
+        //TODO run method here to set board position
+        printBox(sectionList);
+      } else {
+        System.out.println("This space has already been taken. Choose another");
+      }
+
     }
-    else
-    {
-      System.out.println("This space has already been taken. Choose another");
-    }
+  }
+
+  public static void printBox(List<Section> secList)
+  {
+    String[] box = {"0", "1", "2", "3", "4", "5", "6", "7", "8"};
+
+    System.out.println(  "\n\n\t\t" + secList.get(0).value + "   | " + secList.get(1).value + "  | " + secList.get(2).value);
+    System.out.println(  " \t\t    |    |   " );
+    System.out.println(  " \t\t ___|____|___ " );
+    System.out.println(  "\n\n\t\t" + secList.get(3).value + "   | " + secList.get(4).value + "  | " + secList.get(5).value);
+    System.out.println(  " \t\t    |    |   " );
+    System.out.println(  " \t\t ___|____|___ " );
+    System.out.println(  "\n\n\t\t" + secList.get(6).value+ "   | " +secList.get(7).value + "  | " + secList.get(8).value);
+    System.out.println(  " \t\t    |    |   " );
+    System.out.println(  " \t\t    |    |   " );
+
   }
 }
