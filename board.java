@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 public class board
 {
-  public static void main(String[] args) {
+  public static void main(String[] args)
+  {
     Scanner keyboard = new Scanner(System.in);
 
     String p1Name = "";
@@ -47,13 +48,15 @@ public class board
     sectionList.add(s7);
     sectionList.add(s8);
 
-    while (isGameActive == true) {
+    while (isGameActive == true)
+    {
       printBox(sectionList);
       //TODO set loop to put the following game mechanics in
       System.out.println(p1.name + ": please select your move");
       selSection1 = keyboard.nextInt();
 
-      if (sectionList.get(selSection1).isTaken == false) {
+      if (sectionList.get(selSection1).isTaken == false)
+      {
         sectionList.get(selSection1).value = p1.symbol;
         sectionList.get(selSection1).isTaken = true;
         //TODO run method here to set board position
@@ -65,14 +68,28 @@ public class board
       System.out.println(p2.name + ": please select your move");
       selSection2 = keyboard.nextInt();
 
-      if (sectionList.get(selSection2).isTaken == false) {
+      if (sectionList.get(selSection2).isTaken == false)
+      {
         sectionList.get(selSection2).value = p2.symbol;
         sectionList.get(selSection2).isTaken = true;
         //TODO run method here to set board position
         printBox(sectionList);
-      } else {
+      } else
+      {
         System.out.println("This space has already been taken. Choose another");
       }
+
+
+
+      /*List<Integer> boxNumbers = new ArrayList<Integer> (Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8));
+
+      for (int i = 0; i <= sectionList.size()-1; i++) //compares every index in sectionList to every index in boxNumbers
+        for (int j = 0; j <= boxNumbers.size()-1; j++)
+            if (!(sectionList.get(i).equals(boxNumbers.get(j)))) //still fixing, if sectionList doesn't contain any numbers, then game ends
+              isGameActive = false;
+
+      */
+
 
     }
   }
