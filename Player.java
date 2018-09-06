@@ -1,4 +1,5 @@
-public class Player {
+public class Player
+{
     /*fields*/
     boolean isCurrentTurn = false;
     String symbol = "";

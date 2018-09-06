@@ -1,4 +1,5 @@
-public class Section {
+public class Section
+{
     /*fields*/
     boolean isTaken = false;
     String value = "";
