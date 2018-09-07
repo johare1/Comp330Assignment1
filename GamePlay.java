@@ -109,7 +109,7 @@ public class GamePlay
   int selSection1;
   int selSection2;
 
-  while (turnCounter <= 9) //fix
+  while (turnCounter <= 9) //fix, have game stop
   {
     printBox(sectionList); //fix
     //TODO set loop to put the following game mechanics in
@@ -155,16 +155,23 @@ public class GamePlay
   }
 
 
-  /*public void winner ()
+  /*public void winner () //checks the objects in the arraylist
   {
-
+    //8 ways to win
+    //compare indexes
+    //if (index 0, 1,3 are equal to each other)
+      then player_ wins
+    //announces winner
 
 
   }
 
-  public void draw ()
+  public void draw () //checks the objects in the arraylist
   {
-
+    //objects in position dont matter since no one won
+      //or we dont need this method and just do
+        //if no winner
+          then annouce draw
 
 
 

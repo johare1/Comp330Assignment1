@@ -16,7 +16,7 @@ public class board
       aGame.player1First(); //testing
     else
       aGame.player2First();
-
+    //if users want to play again, can repeat the methods, have to find a way to reset board
 
 
 
