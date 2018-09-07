@@ -22,4 +22,9 @@ public class Player
         return this.symbol;
     }
 
+
+    public void Wins()
+    {
+        System.out.println(name + "has Won the game.");
+    }
 }

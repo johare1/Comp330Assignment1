@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.Scanner;
+import java.io.*;
 
 public class GamePlay
 {
@@ -51,6 +52,7 @@ public class GamePlay
 
     while (turnCounter <= 9) //fix
     {
+      checkWin(sectionList, p1, p2);
       printBox(sectionList); //fix
       //TODO set loop to put the following game mechanics in
       System.out.println(p1.name + ": please select your move");
@@ -111,6 +113,7 @@ public class GamePlay
 
   while (turnCounter <= 9) //fix, have game stop
   {
+    checkWin(sectionList, p1, p2);
     printBox(sectionList); //fix
     //TODO set loop to put the following game mechanics in
     System.out.println(p2.name + ": please select your move");
@@ -148,25 +151,105 @@ public class GamePlay
   }
 
 
-
-
-
-
   }
 
 
-  /*public void winner () //checks the objects in the arraylist
+  public void checkWin(List<Section> secList, Player p1, Player p2)
   {
-    //8 ways to win
-    //compare indexes
-    //if (index 0, 1,3 are equal to each other)
-      then player_ wins
-    //announces winner
-
+    if(secList.get(0).value == secList.get(1).value && secList.get(1).value == secList.get(2).value)
+    {
+      if(secList.get(0).value == p1.symbol)
+      {
+        p1.Wins();
+      }else
+      {
+        p2.Wins();
+      }
+    }
+    if(secList.get(0).value == secList.get(3).value && secList.get(3).value == secList.get(6).value)
+    {
+      if(secList.get(0).value == p1.symbol)
+      {
+        p1.Wins();
+      }else
+      {
+        p2.Wins();
+      }
+    }
+    if(secList.get(6).value == secList.get(7).value && secList.get(7).value == secList.get(8).value)
+    {
+      if(secList.get(6).value == p1.symbol)
+      {
+        p1.Wins();
+      }else
+      {
+        p2.Wins();
+      }
+    }
+    if(secList.get(8).value == secList.get(5).value && secList.get(5).value == secList.get(2).value)
+    {
+      if(secList.get(8).value == p1.symbol)
+      {
+        p1.Wins();
+      }else
+      {
+        p2.Wins();
+      }
+    }
+    if(secList.get(3).value == secList.get(4).value && secList.get(4).value == secList.get(5).value)
+    {
+      if(secList.get(3).value == p1.symbol)
+      {
+        p1.Wins();
+      }else
+      {
+        p2.Wins();
+      }
+    }
+    if(secList.get(6).value == secList.get(7).value && secList.get(7).value == secList.get(8).value)
+    {
+      if(secList.get(6).value == p1.symbol)
+      {
+        p1.Wins();
+      }else
+      {
+        p2.Wins();
+      }
+    }
+    if(secList.get(0).value == secList.get(4).value && secList.get(4).value == secList.get(8).value)
+    {
+      if(secList.get(0).value == p1.symbol)
+      {
+        p1.Wins();
+      }else
+      {
+        p2.Wins();
+      }
+    }
+    if(secList.get(2).value == secList.get(4).value && secList.get(4).value == secList.get(6).value)
+    {
+      if(secList.get(2).value == p1.symbol)
+      {
+        p1.Wins();
+      }else
+      {
+        p2.Wins();
+      }
+    }
+    if(secList.get(1).value == secList.get(4).value && secList.get(4).value == secList.get(7).value)
+    {
+      if(secList.get(1).value == p1.symbol)
+      {
+        p1.Wins();
+      }else
+      {
+        p2.Wins();
+      }
+    }
 
   }
 
-  public void draw () //checks the objects in the arraylist
+  /*public void draw () //checks the objects in the arraylist
   {
     //objects in position dont matter since no one won
       //or we dont need this method and just do
