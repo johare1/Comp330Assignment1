@@ -10,6 +10,7 @@ public class board
     String p1Name = "";
     String p2Name = "";
     boolean isGameActive = false;
+    int turnCounter = 0;
 
     System.out.println("Welcome to Tic Tac Toe. There will be two players in this game. Enter Player 1's name:");
     p1Name = keyboard.nextLine().toUpperCase();
@@ -18,10 +19,10 @@ public class board
     isGameActive = true;
 
 
-    /*DONE set user input to these strings*/
+    //DONE set user input to these strings
 
 
-    /*initialize players and sections of board*/
+    //initialize players and sections of board
     Player p1 = new Player(true, "X", p1Name);
     Player p2 = new Player(false, "O", p2Name);
 
@@ -48,7 +49,7 @@ public class board
     sectionList.add(s7);
     sectionList.add(s8);
 
-    while (isGameActive == true)
+    while (turnCounter <= 9)
     {
       printBox(sectionList);
       //TODO set loop to put the following game mechanics in
@@ -59,11 +60,15 @@ public class board
       {
         sectionList.get(selSection1).value = p1.symbol;
         sectionList.get(selSection1).isTaken = true;
+        turnCounter++;
         //TODO run method here to set board position
         printBox(sectionList);
-      } else {
+      }
+      else
+      {
         System.out.println("This space has already been taken. Choose another");
       }
+
 
       System.out.println(p2.name + ": please select your move");
       selSection2 = keyboard.nextInt();
@@ -72,27 +77,17 @@ public class board
       {
         sectionList.get(selSection2).value = p2.symbol;
         sectionList.get(selSection2).isTaken = true;
+        turnCounter++;
         //TODO run method here to set board position
         printBox(sectionList);
-      } else
-      {
-        System.out.println("This space has already been taken. Choose another");
       }
-
-
-
-      /*List<Integer> boxNumbers = new ArrayList<Integer> (Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8));
-
-      for (int i = 0; i <= sectionList.size()-1; i++) //compares every index in sectionList to every index in boxNumbers
-        for (int j = 0; j <= boxNumbers.size()-1; j++)
-            if (!(sectionList.get(i).equals(boxNumbers.get(j)))) //still fixing, if sectionList doesn't contain any numbers, then game ends
-              isGameActive = false;
-
-      */
-
-
+      else
+      {
+        System.out.println("This space has already been taken. Choose another" + "this is the counter + " + turnCounter); //testing
+      }
     }
   }
+
 
   public static void printBox(List<Section> secList)
   {
