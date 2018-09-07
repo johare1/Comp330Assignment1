@@ -6,6 +6,22 @@ public class board
   public static void main(String[] args)
   {
     Scanner keyboard = new Scanner(System.in);
+    GamePlay aGame = new GamePlay();
+    int goFirst;
+
+    aGame.choosePlayers();
+    System.out.println("Who will play first? Enter '1' or '2':");
+    goFirst = keyboard.nextInt();
+    if (goFirst == 1)
+      aGame.player1First(); //testing
+    else
+      aGame.player2First();
+
+
+
+
+
+    /*Scanner keyboard = new Scanner(System.in);
 
     String p1Name = "";
     String p2Name = "";
@@ -86,10 +102,10 @@ public class board
         System.out.println("This space has already been taken. Choose another" + "this is the counter + " + turnCounter); //testing
       }
     }
-  }
+  } */
 
 
-  public static void printBox(List<Section> secList)
+  /*public static void printBox(List<Section> secList)
   {
 
     System.out.println(  "\n\n\t\t" + secList.get(0).value + "   | " + secList.get(1).value + "  | " + secList.get(2).value);
@@ -101,6 +117,8 @@ public class board
     System.out.println(  "\n\n\t\t" + secList.get(6).value+ "   | " +secList.get(7).value + "  | " + secList.get(8).value);
     System.out.println(  " \t\t    |    |   " );
     System.out.println(  " \t\t    |    |   " );
+
+  } */
 
   }
 }
