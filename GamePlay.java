@@ -166,8 +166,6 @@ public class GamePlay
       {
         p2.Wins();
       }
-      else
-        System.out.println("This is a draw.");
     }
 
     if(secList.get(0).value == secList.get(3).value && secList.get(3).value == secList.get(6).value) //first column (left)
@@ -180,8 +178,6 @@ public class GamePlay
       {
         p2.Wins();
       }
-      else
-        System.out.println("This is a draw.");
     }
 
     if(secList.get(6).value == secList.get(7).value && secList.get(7).value == secList.get(8).value) //bottom row
@@ -194,8 +190,6 @@ public class GamePlay
       {
         p2.Wins();
       }
-      else
-        System.out.println("This is a draw.");
     }
 
     if(secList.get(8).value == secList.get(5).value && secList.get(5).value == secList.get(2).value) //last column (right)
@@ -208,8 +202,6 @@ public class GamePlay
       {
         p2.Wins();
       }
-      else
-        System.out.println("This is a draw.");
     }
 
     if(secList.get(3).value == secList.get(4).value && secList.get(4).value == secList.get(5).value) //middle row
@@ -222,8 +214,6 @@ public class GamePlay
       {
         p2.Wins();
       }
-      else
-        System.out.println("This is a draw.");
     }
 
     if(secList.get(0).value == secList.get(4).value && secList.get(4).value == secList.get(8).value) //diagnol from top left
@@ -236,8 +226,6 @@ public class GamePlay
       {
         p2.Wins();
       }
-      else
-        System.out.println("This is a draw.");
     }
 
     if(secList.get(2).value == secList.get(4).value && secList.get(4).value == secList.get(6).value) //diagnol from top right
@@ -250,8 +238,6 @@ public class GamePlay
       {
         p2.Wins();
       }
-      else
-        System.out.println("This is a draw.");
     }
 
     if(secList.get(1).value == secList.get(4).value && secList.get(4).value == secList.get(7).value) //middle column
@@ -264,9 +250,10 @@ public class GamePlay
       {
         p2.Wins();
       }
-      else
-        System.out.println("This is a draw.");
     }
+
+    if (secList.size() == 9) //if list full and no winner, then it's a draw
+      System.out.println("This is a draw.");
 
   }
 
