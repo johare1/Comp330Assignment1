@@ -85,7 +85,7 @@ public class GamePlay
       }
       else
       {
-        System.out.println("This space has already been taken. Choose another" + "this is the counter + " + turnCounter); //testing
+        System.out.println("This space has already been taken. Choose another" + " this is the counter: " + turnCounter); //testing
       }
     }
 
@@ -146,7 +146,7 @@ public class GamePlay
     }
     else
     {
-      System.out.println("This space has already been taken. Choose another" + "this is the counter + " + turnCounter); //testing
+      System.out.println("This space has already been taken. Choose another" + " this is the counter " + turnCounter); //testing
     }
   }
 
@@ -156,109 +156,119 @@ public class GamePlay
 
   public void checkWin(List<Section> secList, Player p1, Player p2)
   {
-    if(secList.get(0).value == secList.get(1).value && secList.get(1).value == secList.get(2).value)
+    if(secList.get(0).value == secList.get(1).value && secList.get(1).value == secList.get(2).value) //top row
     {
       if(secList.get(0).value == p1.symbol)
       {
         p1.Wins();
-      }else
+      }
+      else if(secList.get(0).value == p2.symbol)
       {
         p2.Wins();
       }
+      else
+        System.out.println("This is a draw.");
     }
-    if(secList.get(0).value == secList.get(3).value && secList.get(3).value == secList.get(6).value)
+
+    if(secList.get(0).value == secList.get(3).value && secList.get(3).value == secList.get(6).value) //first column (left)
     {
       if(secList.get(0).value == p1.symbol)
       {
         p1.Wins();
-      }else
+      }
+      else if(secList.get(0).value == p2.symbol)
       {
         p2.Wins();
       }
+      else
+        System.out.println("This is a draw.");
     }
-    if(secList.get(6).value == secList.get(7).value && secList.get(7).value == secList.get(8).value)
+
+    if(secList.get(6).value == secList.get(7).value && secList.get(7).value == secList.get(8).value) //bottom row
     {
       if(secList.get(6).value == p1.symbol)
       {
         p1.Wins();
-      }else
+      }
+      else if(secList.get(6).value == p2.symbol)
       {
         p2.Wins();
       }
+      else
+        System.out.println("This is a draw.");
     }
-    if(secList.get(8).value == secList.get(5).value && secList.get(5).value == secList.get(2).value)
+
+    if(secList.get(8).value == secList.get(5).value && secList.get(5).value == secList.get(2).value) //last column (right)
     {
       if(secList.get(8).value == p1.symbol)
       {
         p1.Wins();
-      }else
+      }
+      else if(secList.get(8).value == p2.symbol)
       {
         p2.Wins();
       }
+      else
+        System.out.println("This is a draw.");
     }
-    if(secList.get(3).value == secList.get(4).value && secList.get(4).value == secList.get(5).value)
+
+    if(secList.get(3).value == secList.get(4).value && secList.get(4).value == secList.get(5).value) //middle row
     {
       if(secList.get(3).value == p1.symbol)
       {
         p1.Wins();
-      }else
+      }
+      else if(secList.get(3).value == p2.symbol)
       {
         p2.Wins();
       }
+      else
+        System.out.println("This is a draw.");
     }
-    if(secList.get(6).value == secList.get(7).value && secList.get(7).value == secList.get(8).value)
-    {
-      if(secList.get(6).value == p1.symbol)
-      {
-        p1.Wins();
-      }else
-      {
-        p2.Wins();
-      }
-    }
-    if(secList.get(0).value == secList.get(4).value && secList.get(4).value == secList.get(8).value)
+
+    if(secList.get(0).value == secList.get(4).value && secList.get(4).value == secList.get(8).value) //diagnol from top left
     {
       if(secList.get(0).value == p1.symbol)
       {
         p1.Wins();
-      }else
+      }
+      else if(secList.get(0).value == p2.symbol)
       {
         p2.Wins();
       }
+      else
+        System.out.println("This is a draw.");
     }
-    if(secList.get(2).value == secList.get(4).value && secList.get(4).value == secList.get(6).value)
+
+    if(secList.get(2).value == secList.get(4).value && secList.get(4).value == secList.get(6).value) //diagnol from top right
     {
       if(secList.get(2).value == p1.symbol)
       {
         p1.Wins();
-      }else
+      }
+      else if(secList.get(2).value == p2.symbol)
       {
         p2.Wins();
       }
+      else
+        System.out.println("This is a draw.");
     }
-    if(secList.get(1).value == secList.get(4).value && secList.get(4).value == secList.get(7).value)
+
+    if(secList.get(1).value == secList.get(4).value && secList.get(4).value == secList.get(7).value) //middle column
     {
       if(secList.get(1).value == p1.symbol)
       {
         p1.Wins();
-      }else
+      }
+      else if(secList.get(1).value == p2.symbol)
       {
         p2.Wins();
       }
+      else
+        System.out.println("This is a draw.");
     }
 
   }
-
-  /*public void draw () //checks the objects in the arraylist
-  {
-    //objects in position dont matter since no one won
-      //or we dont need this method and just do
-        //if no winner
-          then annouce draw
-
-
-
-  } */
 
 
   public void printBox(List<Section> secList) //leaving here for testing purposes

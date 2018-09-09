@@ -25,6 +25,6 @@ public class Player
 
     public void Wins()
     {
-        System.out.println(name + "has Won the game.");
+        System.out.println(name + " has Won the game.");
     }
 }
