@@ -4,6 +4,7 @@ public class Player
     boolean isCurrentTurn = false;
     String symbol = "";
     String name = "";
+    boolean hasWon = false;
 
     /*constructor*/
     Player(boolean c, String s, String n)
@@ -26,5 +27,6 @@ public class Player
     public void Wins()
     {
         System.out.println(name + " has Won the game.");
+        hasWon = true;
     }
 }

@@ -5,6 +5,7 @@ import java.io.*;
 public class GamePlay
 {
   Scanner keyboard = new Scanner(System.in);
+  boolean gameOver;
 
   String p1Name = "";
   String p2Name = "";
@@ -52,7 +53,7 @@ public class GamePlay
 
     while (turnCounter <= 9) //fix
     {
-      checkWin(sectionList, p1, p2);
+
       printBox(sectionList); //fix
       //TODO set loop to put the following game mechanics in
       System.out.println(p1.name + ": please select your move");
@@ -70,7 +71,11 @@ public class GamePlay
       {
         System.out.println("This space has already been taken. Choose another");
       }
-
+      gameOver = checkWin(sectionList, p1, p2);
+      if(gameOver == true)
+      {
+        break;
+      }
 
       System.out.println(p2.name + ": please select your move");
       selSection2 = keyboard.nextInt();
@@ -86,6 +91,11 @@ public class GamePlay
       else
       {
         System.out.println("This space has already been taken. Choose another" + " this is the counter: " + turnCounter); //testing
+      }
+      gameOver = checkWin(sectionList, p1, p2);
+      if(gameOver == true)
+      {
+        break;
       }
     }
 
@@ -113,7 +123,7 @@ public class GamePlay
 
   while (turnCounter <= 9) //fix, have game stop
   {
-    checkWin(sectionList, p1, p2);
+
     printBox(sectionList); //fix
     //TODO set loop to put the following game mechanics in
     System.out.println(p2.name + ": please select your move");
@@ -132,7 +142,11 @@ public class GamePlay
       System.out.println("This space has already been taken. Choose another");
     }
 
-
+    gameOver = checkWin(sectionList, p1, p2);
+    if(gameOver == true)
+    {
+      break;
+    }
     System.out.println(p1.name + ": please select your move");
     selSection2 = keyboard.nextInt();
 
@@ -148,13 +162,19 @@ public class GamePlay
     {
       System.out.println("This space has already been taken. Choose another" + " this is the counter " + turnCounter); //testing
     }
+
+    gameOver = checkWin(sectionList, p1, p2);
+    if(gameOver == true)
+    {
+      break;
+    }
   }
 
 
   }
 
 
-  public void checkWin(List<Section> secList, Player p1, Player p2)
+  public boolean checkWin(List<Section> secList, Player p1, Player p2)
   {
     if(secList.get(0).value == secList.get(1).value && secList.get(1).value == secList.get(2).value) //top row
     {
@@ -252,8 +272,13 @@ public class GamePlay
       }
     }
 
-    if (secList.size() == 9) //if list full and no winner, then it's a draw
-      System.out.println("This is a draw.");
+
+    if(p1.hasWon == true || p2.hasWon == true)
+    {
+      return true;
+    }else{
+      return false;
+    }
 
   }
 
