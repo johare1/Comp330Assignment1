@@ -5,6 +5,7 @@ public class Player
     String symbol = "";
     String name = "";
     boolean hasWon = false;
+    boolean isDraw = false;
 
     /*constructor*/
     Player(boolean c, String s, String n)
@@ -28,5 +29,11 @@ public class Player
     {
         System.out.println(name + " has Won the game.");
         hasWon = true;
+    }
+
+    public void Draw()
+    {
+        System.out.println("There is a draw.");
+        isDraw = true;
     }
 }

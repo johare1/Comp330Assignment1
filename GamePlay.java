@@ -95,6 +95,7 @@ public class GamePlay
       gameOver = checkWin(sectionList, p1, p2);
       if(gameOver == true)
       {
+
         break;
       }
     }
@@ -145,6 +146,7 @@ public class GamePlay
     gameOver = checkWin(sectionList, p1, p2);
     if(gameOver == true)
     {
+
       break;
     }
     System.out.println(p1.name + ": please select your move");
@@ -176,6 +178,12 @@ public class GamePlay
 
   public boolean checkWin(List<Section> secList, Player p1, Player p2)
   {
+    if (secList.get(0).value != "0" && secList.get(1).value != "1" && secList.get(2).value != "2" && secList.get(3).value != "3"
+    && secList.get(4).value != "4" && secList.get(5).value != "5" && secList.get(6).value != "6" && secList.get(7).value != "7"
+            && secList.get(8).value != "8")
+    {
+      p1.Draw();
+    }
     if(secList.get(0).value == secList.get(1).value && secList.get(1).value == secList.get(2).value) //top row
     {
       if(secList.get(0).value == p1.symbol)
@@ -275,7 +283,10 @@ public class GamePlay
     if(p1.hasWon == true || p2.hasWon == true)
     {
       return true;
-    }else{
+    }else if(p1.isDraw == true){
+      return true;
+    }else
+    {
       return false;
     }
 
