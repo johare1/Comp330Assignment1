@@ -105,8 +105,8 @@ public class GamePlay
 
   public void player2First()
   {
-  Player p1 = new Player(false, "X", p1Name);
-  Player p2 = new Player(true, "O", p2Name);
+  Player p1 = new Player(false, "O", p1Name);
+  Player p2 = new Player(true, "X", p2Name);
 
   sectionList.add(s0);
   sectionList.add(s1);
