@@ -78,6 +78,8 @@ public class GamePlay {
                     System.out.println("TEST---------------------");
                     System.exit(0);
                 }else {
+                    SetBoard(sectionList);
+                    gameOver = false;
                     continue;
                 }
             }
@@ -102,7 +104,10 @@ public class GamePlay {
                 {
                     System.out.println("TEST---------------------");
                     System.exit(0);
-                }else {continue;}
+                }else {SetBoard(sectionList);
+                gameOver = false;
+                continue;
+                }
             }
         }
 
@@ -110,8 +115,17 @@ public class GamePlay {
 
 }
 
-    public void SetBoard()
+    public void SetBoard(List<Section> secList)
     {
+        secList.get(0).Set("0", false);
+        secList.get(1).Set("1",false);
+        secList.get(2).Set("2",false);
+        secList.get(3).Set("3",false);
+        secList.get(4).Set("4",false);
+        secList.get(5).Set("5",false);
+        secList.get(6).Set("6",false);
+        secList.get(7).Set("7",false);
+        secList.get(8).Set("8",false);
 
     }
 
@@ -122,7 +136,7 @@ public class GamePlay {
         userInput.toUpperCase();
 
         if (userInput.toUpperCase() == "Y") {
-            SetBoard();
+            SetBoard(sectionList);
         }else
         {
         }

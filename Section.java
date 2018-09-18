@@ -12,4 +12,10 @@ public class Section
         this.value = v;
         this.isTaken = t;
     }
+
+    public void Set(String v, boolean t)
+    {
+        this.value = v;
+        this.isTaken = t;
+    }
 }
