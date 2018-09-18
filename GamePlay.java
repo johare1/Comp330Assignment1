@@ -75,11 +75,13 @@ public class GamePlay {
 
                 if(GameOver().equals("N"))
                 {
-                    System.out.println("TEST---------------------");
                     System.exit(0);
                 }else {
                     SetBoard(sectionList);
                     gameOver = false;
+                    p1.hasWon = false;
+                    p2.hasWon = false;
+                    p1.isDraw = false;
                     continue;
                 }
             }
@@ -102,10 +104,13 @@ public class GamePlay {
 
                 if(GameOver().equals("N"))
                 {
-                    System.out.println("TEST---------------------");
                     System.exit(0);
-                }else {SetBoard(sectionList);
+                }else {
+                    SetBoard(sectionList);
                 gameOver = false;
+                p1.hasWon = false;
+                p2.hasWon = false;
+                p1.isDraw = false;
                 continue;
                 }
             }
@@ -182,11 +187,17 @@ public class GamePlay {
 
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
+                String userInput = GameOver();
 
                 if(GameOver()== "N")
                 {
-                    break;
-                }else {continue;}
+                    System.exit(0);
+                }else {SetBoard(sectionList);
+                    gameOver = false;
+                    p1.hasWon = false;
+                    p2.hasWon = false;
+                    p1.isDraw = false;
+                    continue;}
             }
             System.out.println(p1.name + ": please select your move");
             selSection2 = keyboard.nextInt();
@@ -203,11 +214,17 @@ public class GamePlay {
 
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
-
+                String userInput = GameOver();
                 if(GameOver()== "N")
                 {
-                   break;
-                }else {continue;}
+                    System.exit(0);
+                }else {
+                    SetBoard(sectionList);
+                    gameOver = false;
+                    p1.hasWon = false;
+                    p2.hasWon = false;
+                    p1.isDraw = false;
+                    continue;}
             }
         }
 
