@@ -73,7 +73,7 @@ public class GamePlay {
             if (gameOver == true) {
                 String userInput = GameOver();
 
-                if(GameOver().equals("N"))
+                if(userInput.equals("N"))
                 {
                     System.exit(0);
                 }else {
@@ -102,7 +102,7 @@ public class GamePlay {
             if (gameOver == true) {
                 String userInput = GameOver();
 
-                if(GameOver().equals("N"))
+                if(userInput.equals("N"))
                 {
                     System.exit(0);
                 }else {
@@ -189,7 +189,7 @@ public class GamePlay {
             if (gameOver == true) {
                 String userInput = GameOver();
 
-                if(GameOver()== "N")
+                if(userInput.equals("N"))
                 {
                     System.exit(0);
                 }else {SetBoard(sectionList);
@@ -215,7 +215,7 @@ public class GamePlay {
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
                 String userInput = GameOver();
-                if(GameOver()== "N")
+                if(userInput.equals("N"))
                 {
                     System.exit(0);
                 }else {
