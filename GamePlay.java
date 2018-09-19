@@ -159,9 +159,6 @@ public class GamePlay
       {
         SetBoard(sectionList);
       }
-      else
-      {
-      }
       return  userInput;
     }
 
