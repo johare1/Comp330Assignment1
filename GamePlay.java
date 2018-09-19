@@ -74,7 +74,7 @@ public class GamePlay {
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
                 String userInput = GameOver();
-
+                userInput.toUpperCase();
                 if(userInput.equals("N"))
                 {
                     System.exit(0);
@@ -103,7 +103,7 @@ public class GamePlay {
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
                 String userInput = GameOver();
-
+                userInput.toUpperCase();
                 if(userInput.equals("N"))
                 {
                     System.exit(0);
@@ -122,6 +122,7 @@ public class GamePlay {
 
 }
 
+//sets the board back to its default state
     public void SetBoard(List<Section> secList)
     {
         secList.get(0).Set("0", false);
@@ -136,6 +137,7 @@ public class GamePlay {
 
     }
 
+    //runs when the game is done and takes users input to play again or not
     public String GameOver() {
         System.out.println("Would you like to play again?(Y/N)");
         String userInput = "";
@@ -150,6 +152,7 @@ public class GamePlay {
         return  userInput;
     }
 
+    //runs when user decides for player 2 to go first
 
     public void player2First() {
         Player p1 = new Player(false, "O", p1Name);
@@ -190,7 +193,7 @@ public class GamePlay {
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
                 String userInput = GameOver();
-
+                userInput.toUpperCase();
                 if(userInput.equals("N"))
                 {
                     System.exit(0);
@@ -217,6 +220,7 @@ public class GamePlay {
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
                 String userInput = GameOver();
+                userInput.toUpperCase();
                 if(userInput.equals("N"))
                 {
                     System.exit(0);
@@ -233,6 +237,7 @@ public class GamePlay {
 
     }
 
+    //runs every move to check if someone has won
 
     public boolean checkWin(List<Section> secList, Player p1, Player p2) {
         if (secList.get(0).value != "0" && secList.get(1).value != "1" && secList.get(2).value != "2" && secList.get(3).value != "3"
