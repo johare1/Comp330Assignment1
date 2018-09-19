@@ -80,7 +80,7 @@ public class GamePlay
             {
               String userInput = GameOver();
               userInput.toUpperCase();
-              if(userInput.equals("N"))
+              if(userInput.equals("N")|| userInput.equals("n"))
                 {
                   System.exit(0);
                 }
@@ -114,7 +114,7 @@ public class GamePlay
           {
             String userInput = GameOver();
             userInput.toUpperCase();
-            if(userInput.equals("N"))
+            if(userInput.equals("N")|| userInput.equals("n"))
             {
               System.exit(0);
             }
@@ -208,7 +208,7 @@ public class GamePlay
         {
           String userInput = GameOver();
           userInput.toUpperCase();
-          if(userInput.equals("N"))
+          if(userInput.equals("N")|| userInput.equals("n"))
           {
             System.exit(0);
           }
@@ -242,7 +242,7 @@ public class GamePlay
         {
           String userInput = GameOver();
           userInput.toUpperCase();
-          if(userInput.equals("N"))
+          if(userInput.equals("N")|| userInput.equals("n"))
           {
             System.exit(0);
           }
