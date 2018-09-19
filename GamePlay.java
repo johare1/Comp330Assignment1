@@ -4,7 +4,6 @@ import java.io.*;
 
 public class GamePlay {
 
-    //declares parts of board and adds them to a list
     boolean shouldRestart = false;
     Scanner keyboard = new Scanner(System.in);
     boolean gameOver;
@@ -24,7 +23,6 @@ public class GamePlay {
     Section s8 = new Section(8, "8", false);
     List<Section> sectionList = new ArrayList<Section>();
 
-    //naming of players based on user input
 
     public void choosePlayers() {
         System.out.println("Welcome to Tic Tac Toe. There will be two players in this game. Enter Player 1's name:");
@@ -76,7 +74,7 @@ public class GamePlay {
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
                 String userInput = GameOver();
-                userInput.toUpperCase();
+
                 if(userInput.equals("N"))
                 {
                     System.exit(0);
@@ -105,7 +103,6 @@ public class GamePlay {
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
                 String userInput = GameOver();
-                userInput.toUpperCase();
 
                 if(userInput.equals("N"))
                 {
@@ -125,7 +122,6 @@ public class GamePlay {
 
 }
 
-//sets the board back to it's "empty" state once the game is rerun
     public void SetBoard(List<Section> secList)
     {
         secList.get(0).Set("0", false);
@@ -140,8 +136,6 @@ public class GamePlay {
 
     }
 
-    //runs when the game has completed and takes in user input to decide whether the game should end or repeat
-
     public String GameOver() {
         System.out.println("Would you like to play again?(Y/N)");
         String userInput = "";
@@ -150,11 +144,13 @@ public class GamePlay {
 
         if (userInput.toUpperCase() == "Y") {
             SetBoard(sectionList);
+        }else
+        {
         }
         return  userInput;
     }
 
-//runs if the user selects player 2 to go first
+
     public void player2First() {
         Player p1 = new Player(false, "O", p1Name);
         Player p2 = new Player(true, "X", p2Name);
@@ -194,7 +190,7 @@ public class GamePlay {
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
                 String userInput = GameOver();
-                userInput.toUpperCase();
+
                 if(userInput.equals("N"))
                 {
                     System.exit(0);
@@ -221,7 +217,6 @@ public class GamePlay {
             gameOver = checkWin(sectionList, p1, p2);
             if (gameOver == true) {
                 String userInput = GameOver();
-                userInput.toUpperCase();
                 if(userInput.equals("N"))
                 {
                     System.exit(0);
@@ -238,7 +233,6 @@ public class GamePlay {
 
     }
 
-    //this method will run after each turn to check if a player has won
 
     public boolean checkWin(List<Section> secList, Player p1, Player p2) {
         if (secList.get(0).value != "0" && secList.get(1).value != "1" && secList.get(2).value != "2" && secList.get(3).value != "3"
