@@ -181,7 +181,6 @@ public class GamePlay
       sectionList.add(s7);
       sectionList.add(s8);
 
-      int turnCounter = 0;
       int selSection1;
       int selSection2;
 
